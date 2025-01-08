@@ -540,7 +540,9 @@ body {
   position: relative; /* To ensure content is above particles */
   z-index: 2; /* Above particles */
 }
-
+.connect-thrive-desktop-module-faq-title span {
+  font-weight: 600;
+}
 .connect-thrive-course-overview-content {
   text-align: left;
   color: #1a1a1a;
