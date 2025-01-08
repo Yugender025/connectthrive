@@ -86,7 +86,7 @@ body {
   font-weight: 500;
   height: auto;
   overflow-x: hidden;
-  padding-top: 150px;
+  padding-top: 220px;
 }
 
 .connect-thrive-hero-container {
@@ -518,6 +518,7 @@ body {
   padding: 40px 20px;
   position: relative; /* For positioning particles */
   overflow: hidden; /* Ensure particles stay within the section */
+  padding-top: 10rem;
 }
 
 /* Particles container */
@@ -633,12 +634,13 @@ body {
   padding: 0 12px;
   box-sizing: border-box;
   overflow: hidden; /* Hide overflow */
+  gap: 1rem;
 }
 
 .card {
-  width: 320px; /* Fixed width for cards */
+  width: 350px; /* Fixed width for cards */
   height: 200px; /* Fixed height for cards */
-  margin-right: 35px; /* Add spacing between cards */
+ 
   perspective: 1000px;
   scroll-snap-align: start; /* Snap to the start of each card */
 }
@@ -701,8 +703,9 @@ body {
     padding: 0 12px;
     box-sizing: border-box;
     overflow: hidden; /* Hide overflow */
+    gap: 1rem;
   }
-
+ 
   .connect-thrive-course-overview-box-container {
     display: flex;
     overflow-x: auto; /* Allow horizontal scrolling */
@@ -1499,7 +1502,7 @@ margin-right: 200px;
   position: absolute; /* Position absolutely within the .connect-thrive-contact-form-bg */
   top: 20%; /* Adjust top position as needed */
 
-  max-width: 550px; /* Adjust logo size */
+  max-width: 450px; /* Adjust logo size */
 }
 
 .connect-thrive-contact-form-text {
