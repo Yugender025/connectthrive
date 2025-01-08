@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /* New Section Styles */
+      .connect-thrive-hero-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin-top: 30px;
+        padding: 0 20px; /* Add padding for responsiveness */
+        width: 900px;
+        margin: 20px auto;
+      }
+
+      .connect-thrive-hero-info div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative; /* To position the line absolutely inside */
+        text-align: center;
+      }
+
+      .connect-thrive-hero-info div::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -15px; /* Adjusted to ensure the line is properly visible */
+        width: 2px;
+        background-color: #6f7171;
+      }
+
+      .connect-thrive-hero-info div:first-child::before {
+        display: none; /* No line on the first section */
+      }
+
+      .connect-thrive-hero-info h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .connect-thrive-hero-info .hero-info-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px; /* Set a fixed width for buttons */
+        padding: 10px;
+        color: white;
+        background-color: #022d31;
+        text-decoration: none;
+        border-radius: 20px;
+        border: 1px solid #ebcf07;
+        transition: background-color 0.3s;
+      }
+
+      .connect-thrive-hero-info .hero-info-btn:hover {
+        background-color: #092f33;
+      }
+
+      .connect-thrive-hero-info .hero-info-btn i {
+        margin-right: 8px;
+      }
+
+      /* Hero Section Styles */
+      .connect-thrive-hero {
+        background-image: url("../images/other-images/banner-top.png"); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+        font-weight: 500;
+        height: 1000px;
+        overflow-x: hidden;
+        padding-top: 150px;
+      }
+
+      .connect-thrive-hero-container {
+        text-align: center; /* Center text within container */
+        width: 70%; /* Adjust width for responsiveness */
+        max-width: 1200px; /* Optional: Limit maximum width */
+      }
+
+      .connect-thrive-hero h1 {
+        margin: 0;
+        font-size: 3rem; /* Adjust as needed */
+      }
+
+      .connect-thrive-hero p {
+        margin: 10px 0;
+        font-size: 1.25rem; /* Adjust as needed */
+      }
+
+      /* Ensure specificity for the button */
+      .connect-thrive-hero .connect-thrive-hero-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        color: #0a0a0b; /* Initial text color */
+        background-color: white; /* Initial background color */
+        text-decoration: none; /* No underline */
+        border-radius: 20px; /* Rounded corners */
+        border: none; /* No border */
+        position: relative; /* Needed for pseudo-element positioning */
+        overflow: hidden; /* Hide overflow for pseudo-elements */
+        font-size: 16px; /* Adjust font size */
+        z-index: 1; /* Ensure button is on top */
+      }
+
+      /* Pseudo-element for the background effect */
+      .connect-thrive-hero .connect-thrive-hero-btn::before {
+        content: ""; /* Pseudo-element content */
+        position: absolute; /* Absolute positioning */
+        height: 100%; /* Full height */
+        width: 100%; /* Full width */
+        background-color: #0cb6b5; /* Background color */
+        left: -100%; /* Start position off-screen left */
+        bottom: -100%; /* Start position off-screen bottom */
+        transition: all 0.5s ease; /* Smooth transition for filling */
+        z-index: -1; /* Behind the button text */
+      }
+
+      /* Hover effect */
+      .connect-thrive-hero .connect-thrive-hero-btn:hover {
+        color: white; /* Change text color on hover */
+      }
+
+      /* Move the pseudo-element on hover */
+      .connect-thrive-hero .connect-thrive-hero-btn:hover::before {
+        left: 0; /* Move the pseudo-element into view */
+        bottom: 0; /* Move the pseudo-element into view */
+      }
+
+      /* Right Container for Image */
+      .right-container {
+        width: 30%; /* Set initial width for desktop */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: center; /* Center the image */
+        align-items: center; /* Center vertically */
+        overflow: hidden; /* Prevent image overflow */
+      }
+
+      .right-container img {
+        max-width: 100%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Remove inline spacing */
+      }
+
+      /* Countdown Timer Styles */
+      .countdown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      .time-unit {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .time-box {
+        background-color: #0cb6b5;
+        border: none;
+        border-radius: 8px;
+        padding: 5px 5px;
+        margin: 5px 0;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 40px; /* Adjust width as needed */
+        color: #fcfec3;
+      }
+
+      .separator {
+        font-size: 1.5rem;
+        margin: 0 10px; /* Space around the separator */
+        margin-top: 10px;
+      }
+
+      .time-label {
+        font-size: 1rem;
+        margin-bottom: 5px; /* Space between label and time box */
+      }
+
+      /* Media Query for Mobile Devices */
+      @media (max-width: 1000px) {
+        .connect-thrive-hero {
+          background-image: url("../images/other-images/mobile-hero-bg.png"); /* Replace with your mobile image path */
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          flex-direction: column; /* Stack elements in a column */
+          height: auto; /* Allow height to adjust */
+        }
+
+        .right-container {
+          width: 100%; /* Full width for mobile */
+          order: -1; /* Move image to the top */
+          margin-top: 50px;
+        }
+
+        .right-container img {
+          max-width: 50%; /* Allow image to take full width */
+          height: auto; /* Maintain aspect ratio */
+          margin: 0; /* Remove margin */
+        }
+
+        .connect-thrive-hero-container {
+          width: 100%; /* Full width for text */
+        }
+        .connect-thrive-hero-info h2 {
+          margin-bottom: 5px;
+        }
+        .connect-thrive-course-overview h2 {
+          font-size: 24px !important;
+        }
+        .connect-thrive-course-overview h3 {
+          font-size: 20px !important;
+        }
+        .popup-button {
+          margin: 0px !important;
+        }
+        a.hero-info-btn {
+          margin-bottom: 15px;
+        }
+        .connect-thrive-hero h1 {
+          font-size: 24px; /* Adjust font size for mobile */
+        }
+
+        .connect-thrive-hero p {
+          font-size: 1rem; /* Adjust font size for mobile */
+        }
+
+        .countdown {
+          flex-direction: row; /* Stack countdown items vertically */
+        }
+
+        /* Hide the separator lines on mobile */
+        .connect-thrive-hero-info div::before {
+          display: none; /* Hide the separator lines on mobile */
+        }
+      }
+
+
+#typing-text {
+  font-weight: bold;
+}
+
+#typing-text::after {
+  content: '|';
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!--Hero Section-->
+      <section class="connect-thrive-hero">
+        <div class="connect-thrive-hero-container">
+          <h1>Join Our Expert-Led Oracle Fusion Cloud ERP Training</h1>
+        <p id="typing-text">Build your success story with Connect Thrive.</p>
+
+          <button class="connect-thrive-hero-btn popup-button" type="button">Register Now</button>
+
+          <!-- New Section with Info -->
+          <div class="connect-thrive-hero-info">
+            <div>
+              <h2>Duration</h2>
+              <a href="#" class="hero-info-btn">
+                <i class="fa-solid fa-circle-three-quarters"></i> 5 Months
+              </a>
+            </div>
+
+            <div>
+              <h2>Batch</h2>
+              <a href="#" class="hero-info-btn">
+                <i class="fa-regular fa-calendar"></i> November 4th 2024
+              </a>
+            </div>
+            <div>
+              <h2>Mode</h2>
+              <a href="#" class="hero-info-btn"> <i class="fas fa-laptop"></i> Online </a>
+            </div>
+          </div>
+
+          <!-- Countdown Timer Section -->
+          <div class="countdown">
+            <div class="time-unit">
+              <div class="time-label">Days</div>
+              <div id="days" class="time-box">00</div>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-unit">
+              <div class="time-label">Hours</div>
+              <div id="hours" class="time-box">00</div>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-unit">
+              <div class="time-label">Minutes</div>
+              <div id="minutes" class="time-box">00</div>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-unit">
+              <div class="time-label">Seconds</div>
+              <div id="seconds" class="time-box">00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Container with Image -->
+        <div class="right-container">
+          <img src="./assets/images/other-images/hero-bg-image.png" alt="Your Image" />
+          <!-- Replace with your image path -->
+        </div>
+      </section>
+    </main>
+
+    <!--Footer-->
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const text = "Build your success story with Connect Thrive.";
+    let i = 0;
+    const speed = 100; // Speed of typing (in milliseconds)
+    const pauseBetweenLoops = 2000; // Pause before starting the loop again
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typing-text").textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        // Wait for some time, then reset and start over
+        setTimeout(() => {
+          document.getElementById("typing-text").textContent = "";
+          i = 0;
+          typeWriter();
+        }, pauseBetweenLoops); // Delay before restarting the typing
+      }
+    }
+
+    // Clear the initial text and start typing
+    document.getElementById("typing-text").textContent = "";
+    typeWriter();
+  });
+</script>
+
+
+  </body>
+</html>

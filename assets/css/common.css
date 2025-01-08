@@ -1,0 +1,2487 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+
+}
+
+body {
+ 
+  line-height: 1.6;
+
+
+}
+
+/* New Section Styles */
+.connect-thrive-hero-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 30px;
+  padding: 0 20px; /* Add padding for responsiveness */
+
+  margin: 20px auto;
+}
+
+.connect-thrive-hero-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* To position the line absolutely inside */
+  text-align: center;
+}
+
+.connect-thrive-hero-info div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -15px; /* Adjusted to ensure the line is properly visible */
+  width: 2px;
+  background-color: #6f7171;
+}
+
+.connect-thrive-hero-info div:first-child::before {
+  display: none; /* No line on the first section */
+}
+
+.connect-thrive-hero-info h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.connect-thrive-hero-info .hero-info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px; /* Set a fixed width for buttons */
+  padding: 10px;
+  color: white;
+  background-color: #022d31;
+  text-decoration: none;
+  border-radius: 20px;
+  border: 1px solid #ebcf07;
+  transition: background-color 0.3s;
+}
+
+.connect-thrive-hero-info .hero-info-btn:hover {
+  background-color: #092f33;
+}
+
+.connect-thrive-hero-info .hero-info-btn i {
+  margin-right: 8px;
+}
+
+/* Hero Section Styles */
+.connect-thrive-hero {
+  background-image: url("../images/other-images/banner-top.png"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-weight: 500;
+  height: auto;
+  overflow-x: hidden;
+  padding-top: 150px;
+}
+
+.connect-thrive-hero-container {
+  text-align: center; /* Center text within container */
+  width: 70%; /* Adjust width for responsiveness */
+  max-width: 1200px; /* Optional: Limit maximum width */
+}
+
+.connect-thrive-hero h1 {
+  margin: 0;
+  font-size: 3rem; /* Adjust as needed */
+}
+
+.connect-thrive-hero p {
+  margin: 10px 0;
+  font-size: 1.25rem; /* Adjust as needed */
+}
+
+/* Ensure specificity for the button */
+.connect-thrive-hero .connect-thrive-hero-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #0a0a0b; /* Initial text color */
+    background-color: white; /* Initial background color */
+    text-decoration: none; /* No underline */
+    border-radius: 20px; /* Rounded corners */
+    border: none; /* No border */
+    position: relative; /* Needed for pseudo-element positioning */
+    overflow: hidden; /* Hide overflow for pseudo-elements */
+    font-size: 16px; /* Adjust font size */
+    z-index: 1; /* Ensure button is on top */
+}
+
+/* Pseudo-element for the background effect */
+.connect-thrive-hero .connect-thrive-hero-btn::before {
+    content: ""; /* Pseudo-element content */
+    position: absolute; /* Absolute positioning */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    background-color: #0cb6b5; /* Background color */
+    left: -100%; /* Start position off-screen left */
+    bottom: -100%; /* Start position off-screen bottom */
+    transition: all 0.5s ease; /* Smooth transition for filling */
+    z-index: -1; /* Behind the button text */
+}
+
+/* Hover effect */
+.connect-thrive-hero .connect-thrive-hero-btn:hover {
+    color: white; /* Change text color on hover */
+}
+
+/* Move the pseudo-element on hover */
+.connect-thrive-hero .connect-thrive-hero-btn:hover::before {
+    left: 0; /* Move the pseudo-element into view */
+    bottom: 0; /* Move the pseudo-element into view */
+}
+
+
+/* Right Container for Image */
+.right-container {
+  width: 30%; /* Set initial width for desktop */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the image */
+  align-items: center; /* Center vertically */
+  overflow: hidden; /* Prevent image overflow */
+}
+
+.right-container img {
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove inline spacing */
+}
+
+/* Countdown Timer Styles */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.time-unit {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.time-box {
+  background-color: #0cb6b5;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 5px;
+  margin: 5px 0;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 40px; /* Adjust width as needed */
+  color: #fcfec3;
+}
+
+.separator {
+  font-size: 1.5rem;
+  margin: 0 10px; /* Space around the separator */
+  margin-top: 10px;
+}
+
+.time-label {
+  font-size: 1rem;
+  margin-bottom: 5px; /* Space between label and time box */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 1000px) {
+  .connect-thrive-hero {
+    background-image: url("../images/other-images/mobile-hero-bg.png"); /* Replace with your mobile image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column; /* Stack elements in a column */
+    height: auto; /* Allow height to adjust */
+  }
+
+
+
+
+  .right-container {
+    width: 100%; /* Full width for mobile */
+    order: -1; /* Move image to the top */
+    margin-top: 50px;
+  }
+
+  .right-container img {
+    max-width: 50%; /* Allow image to take full width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove margin */
+  }
+
+  .connect-thrive-hero-container {
+    width: 100%; /* Full width for text */
+  }
+  .connect-thrive-hero-info h2 {
+    margin-bottom: 5px;
+  }
+  .connect-thrive-course-overview h2 {
+    font-size: 24px !important;
+  }
+  .connect-thrive-course-overview h3 {
+    font-size: 20px !important;
+  }
+  .popup-button {
+    margin: 0px !important;
+  }
+  a.hero-info-btn {
+    margin-bottom: 15px;
+  }
+  .connect-thrive-hero h1 {
+    font-size: 24px; /* Adjust font size for mobile */
+  }
+
+  .connect-thrive-hero p {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+
+  .countdown {
+    flex-direction: row; /* Stack countdown items vertically */
+  }
+
+  /* Hide the separator lines on mobile */
+  .connect-thrive-hero-info div::before {
+    display: none; /* Hide the separator lines on mobile */
+  }
+}
+
+
+
+
+#typing-text {
+  font-weight: bold;
+}
+
+#typing-text::after {
+  content: '|';
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Course Eligibility Section Styles */
+.connect-thrive-course-eligibility {
+  background-color: #1a1a1a;
+  width: 100%;
+  padding-top: 50px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+}
+
+/* Centered Heading */
+.connect-thrive-course-eligibility-heading {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Span Styling to isolate 'course' */
+.connect-thrive-course-eligibility-heading span {
+  display: inline-block;
+  position: relative;
+}
+
+/* Image Styles to appear directly below 'course' */
+.shape-image {
+  display: block;
+  height: auto;
+  position: absolute;
+  top: 100%;
+}
+
+/* Custom Floating Animations */
+@keyframes float-up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-up-rotated {
+  0% {
+    transform: translateY(0) rotate(20deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(20deg);
+  }
+  100% {
+    transform: translateY(0) rotate(20deg);
+  }
+}
+
+/* Small Rectangles */
+.rectangle {
+  position: absolute;
+  height: 40px;
+  background-color: white;
+  border-radius: 12px;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* Position and Animation for each rectangle */
+.rectangle-1 {
+  bottom: 35%;
+  left: 15%;
+  animation: float-up 3s infinite alternate;
+}
+
+.rectangle-2 {
+  bottom: 32.3%;
+  left: 40%;
+  animation: float-down 3s infinite alternate;
+}
+
+.rectangle-3 {
+  bottom: 50%;
+  left: 15%;
+  animation: float-up-rotated 3s infinite alternate; /* Rotated */
+}
+
+.rectangle-4 {
+  bottom: 32.5%;
+  left: 62%;
+  animation: float-down 3s infinite alternate;
+}
+
+.rectangle-5 {
+  bottom: 20%;
+  left: 50%;
+  animation: float-up 3s infinite alternate;
+}
+
+.rectangle-6 {
+  bottom: 20%;
+  left: 75%;
+  animation: float-down 3s infinite alternate;
+}
+
+.rectangle-7 {
+  bottom: 15%;
+  left: 30%;
+  animation: float-up 3s infinite alternate;
+}
+
+@media (max-width: 1300px) {
+  /* Keep all positions unchanged */
+  .rectangle-1 {
+    bottom: 25%;
+    left: 15%;
+    animation: float-up 3s infinite alternate;
+  }
+
+  .rectangle-2 {
+    bottom: 24%;
+    left: 40%;
+    animation: float-down 3s infinite alternate;
+  }
+
+  .rectangle-3 {
+    bottom: 50%;
+    left: 15%;
+    animation: float-up-rotated 3s infinite alternate;
+  }
+
+  .rectangle-4 {
+    bottom: 50%;
+    left: 70%;
+    animation: float-down 3s infinite alternate;
+  }
+
+  .rectangle-5 {
+    bottom: 10%;
+    left: 50%;
+    animation: float-up 3s infinite alternate;
+  }
+
+  .rectangle-6 {
+    bottom: 30%;
+    left: 75%;
+    animation: float-down 3s infinite alternate;
+  }
+
+  .rectangle-7 {
+    bottom: 5%;
+    left: 20%;
+    animation: float-up 3s infinite alternate;
+  }
+}
+
+@media (max-width: 1000px) {
+  /* Responsive Design for smaller screens */
+  .connect-thrive-course-eligibility {
+    height: 100vh;
+  }
+
+  .connect-thrive-course-eligibility-heading {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  /* Re-enable floating animations for smaller screens */
+  .rectangle {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    animation: float-up 3s infinite alternate; /* Floating for smaller screens */
+  }
+
+  .rectangle-1 {
+    bottom: 42%;
+    left: 13%;
+  }
+
+  .rectangle-2 {
+    bottom: 70%;
+    left: 30%;
+  }
+
+  .rectangle-3 {
+    bottom: 52%;
+    left: 15%;
+    animation: float-up-rotated 3s infinite alternate; /* Keep rotated */
+  }
+
+  .rectangle-4 {
+    bottom: 39%;
+    left: 50%;
+  }
+
+  .rectangle-5 {
+    bottom: 25%;
+    left: 32%;
+  }
+
+  .rectangle-6 {
+    bottom: 5%;
+    left: 70%;
+  }
+
+  .rectangle-7 {
+    bottom: 15%;
+    left: 15%;
+  }
+}
+
+/* connect-thrive-course-overview */
+.connect-thrive-course-overview {
+  background-image: url("../images/other-images/course-overview-bg.webp");
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  position: relative; /* For positioning particles */
+  overflow: hidden; /* Ensure particles stay within the section */
+}
+
+/* Particles container */
+#particles-js {
+  position: absolute; /* Positioning particles */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Full height of the section */
+  z-index: 0; /* Below content but above background */
+  pointer-events: visibleStroke; /* Allow interaction with content */
+}
+
+.connect-thrive-course-overview-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  position: relative; /* To ensure content is above particles */
+  z-index: 2; /* Above particles */
+}
+
+.connect-thrive-course-overview-content {
+  text-align: left;
+  color: #1a1a1a;
+  width: 100%;
+}
+
+.connect-thrive-course-overview-button1,
+.connect-thrive-course-overview-button2 {
+  margin-top: 30px;
+}
+
+.connect-thrive-course-overview-button1 a,
+.connect-thrive-course-overview-button2 a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fbe80f;
+  color: #000;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Centering the button container */
+.connect-thrive-course-overview-button2-mobile {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px; /* Optional: Add some space above */
+}
+
+/* Button styles */
+.connect-thrive-course-overview-button2-mobile a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fbe80f;
+  color: #000;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+/* Existing styles for the button on smaller screens */
+.connect-thrive-course-overview-button2-mobile {
+  display: none; /* Default to hidden */
+}
+
+@media (max-width: 768px) {
+  .connect-thrive-course-overview-button2-mobile {
+    display: flex; /* Show on small screens */
+  }
+
+  .connect-thrive-course-overview-button2 {
+    display: none; /* Default to hidden */
+  }
+
+  .connect-thrive-course-overview-content {
+    text-align: left;
+    color: #1a1a1a;
+    width: 100%;
+  }
+}
+
+.connect-thrive-course-overview h2 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.connect-thrive-course-overview h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
+.connect-thrive-course-overview p {
+  margin: 10px 0;
+  font-size: 16px;
+  width: 95%;
+  padding: 0 30px;
+}
+
+.connect-thrive-course-overview-box-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide overflow */
+}
+
+.card {
+  width: 320px; /* Fixed width for cards */
+  height: 200px; /* Fixed height for cards */
+  margin-right: 35px; /* Add spacing between cards */
+  perspective: 1000px;
+  scroll-snap-align: start; /* Snap to the start of each card */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: #1d1d1f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transform: rotateY(0deg);
+  text-align: center;
+  padding: 10px;
+}
+
+.card-back {
+  background-color: #0cb6b5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+/* New Styles for Smaller Devices */
+@media (max-width: 768px) {
+  .connect-thrive-course-overview-inner {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+  }
+
+  .connect-thrive-course-overview-box-container {
+    display: flex;
+    justify-content: start;
+    margin: 40px auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+    overflow: hidden; /* Hide overflow */
+  }
+
+  .connect-thrive-course-overview-box-container {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to each card */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+    gap: 20px; /* Smaller gap between cards for mobile */
+  }
+
+  .card {
+    flex: 0 0 calc(100% - 25%); /* Show 1 full card and part of the next card */
+    margin-right: 0; /* No margin for flex */
+  }
+}
+
+/* Particles.js styles */
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+.connect-thrive-course-path-section {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  padding: 20px;
+  background-image: url("../images/other-images/process-bg.webp"); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+
+  background-color: #1a1a1a;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.connect-thrive-course-path-title {
+  color: #ffffff;
+  margin-bottom: 80px;
+  font-size: 36px;
+}
+
+.connect-thrive-course-path-steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%; /* Control width of step container */
+  margin: 0 auto;
+  position: relative;
+}
+
+.connect-thrive-course-path-step {
+  text-align: center;
+  position: relative;
+}
+
+.connect-thrive-course-path-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #0cb6b5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.connect-thrive-course-path-name {
+  color: #ffffff;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+.connect-thrive-course-path-line {
+  position: absolute;
+  top: 55px; /* Adjust top to align with circles */
+  height: 5px;
+  background-color: #0cb6b5;
+}
+
+/* Line from Step 1 to Step 2 */
+.connect-thrive-course-path-line-1-2 {
+  width: calc(50% - 130px); /* Adjust width to space between the circles */
+  left: 100px;
+}
+
+/* Line from Step 2 to Step 3 */
+.connect-thrive-course-path-line-2-3 {
+  width: calc(50% - 120px);
+  right: 100px;
+}
+
+/* Curve line from Step 3 to Step 2 (bottom only) */
+.connect-thrive-course-path-curve-line {
+  position: absolute;
+  bottom: -20px; /* Adjust bottom to align with curve */
+  width: calc(53% - 100px);
+  height: 50px;
+  border: 5px solid #0cb6b5;
+  border-color: transparent #0cb6b5 #0cb6b5 #0cb6b5;
+  border-radius: 0 0 100px 100px;
+  right: 50px;
+}
+
+/* Container for names below the curve line */
+.connect-thrive-course-path-names-container {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  z-index: 1; /* Ensure names are on top of background */
+}
+
+.connect-thrive-course-path-names {
+  color: #ffffff;
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Media Query to Hide Section on Mobile */
+@media (max-width: 500px) {
+  .connect-thrive-course-path-section {
+    display: none; /* Hide the entire section on mobile */
+  }
+}
+
+/*Up-coming Courses*/
+
+.connect-thrive-upcoming-course-section {
+  padding-block: min(20vh, 2rem);
+  margin-inline: auto;
+  color: #111;
+  background-color: #1a1a1a; /* Fallback color */
+  background-image: url("../images/other-images/upcoming-courses-bg.png"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: max-content;
+  padding-bottom: 100px;
+}
+
+.connect-thrive-upcoming-course-heading {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.ribbon {
+  position: absolute;
+  top: 10px;
+  right: -35px; /* Adjust as needed to position the ribbon */
+  background: #ebcf07; /* Color of the ribbon */
+  color: #ff0000; /* Text color */
+  padding: 10px 15px; /* Adjusted padding for better spacing */
+  font-weight: bold;
+  font-size: 14px; /* Increased font size for better readability */
+  transform: rotate(45deg);
+  z-index: 10;
+  line-height: 1; /* Maintain line-height for proper text alignment */
+  width: 140px; /* Set a specific width for the ribbon */
+  height: 40px; /* Set a specific height for the ribbon */
+  text-align: center; /* Center the text */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for better visibility */
+}
+
+.connect-thrive-upcoming-course-box {
+  position: relative; /* Ensure the box is positioned for absolute children */
+}
+
+.connect-thrive-upcoming-course-container {
+  /* margin-top: 5em; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+  margin-left: 200px;
+margin-right: 200px;
+}
+
+.connect-thrive-upcoming-course-card {
+  border-radius: 1.25rem;
+
+  padding: 1rem;
+  position: relative;
+  height: auto; /* Fixed height for cards */
+}
+
+.connect-thrive-upcoming-course-card-inner {
+  position: relative;
+  width: inherit;
+  height: 100%;
+  background: var(--clr);
+  border-radius: 1.25rem;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+}
+
+.connect-thrive-upcoming-course-box {
+  width: 100%;
+  height: 100%;
+  background-color: #022d31;
+  border-radius: 1.25rem;
+  position: relative;
+}
+
+.connect-thrive-upcoming-course-card-inside-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  padding: 1rem; /* Adjust padding as needed */
+  color: white;
+  text-align: center;
+  background-color: #0cb6b5;
+}
+
+.connect-thrive-upcoming-course-card-inside-content h4 {
+  text-transform: capitalize;
+  font-size: clamp(1rem, 1rem + 0.4364vw, 1.8rem);
+  margin-bottom: 0.5rem; /* Space between heading and the sections */
+}
+
+.connect-thrive-upcoming-course-card-inside-content
+  .connect-thrive-upcoming-courses-card-content-sections {
+  display: flex;
+  width: 100%;
+  gap: 1rem; /* Space between the two sections */
+}
+
+.connect-thrive-upcoming-course-card-inside-content
+  .connect-thrive-upcoming-courses-card-content-sections
+  .connect-thrive-upcoming-courses-card-content-sections-inside {
+  flex: 1;
+  padding: 1rem; /* Adjust padding as needed */
+  border-radius: 0.5rem; /* Rounded corners for the sections */
+  color: white; /* Text color inside the sections */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  text-align: left;
+}
+
+.connect-thrive-upcoming-course-card-inside-content
+  .connect-thrive-upcoming-courses-card-content-sections
+  .connect-thrive-upcoming-courses-card-content-sections-inside:first-child {
+  flex-basis: 30%; /* 30% width for the first section */
+}
+
+.connect-thrive-upcoming-course-card-inside-content
+  .connect-thrive-upcoming-courses-card-content-sections
+  .connect-thrive-upcoming-courses-card-content-sections-inside:last-child {
+  flex-basis: 70%; /* 70% width for the second section */
+}
+
+.connect-thrive-upcoming-course-card-button {
+  position: absolute;
+  bottom: 1rem; /* Distance from the bottom */
+  left: 40%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  width: 60%; /* Button width set to 80% of the card */
+}
+
+.connect-thrive-upcoming-course-card-button a {
+  display: block;
+  background-color: #fbe80f; /* Button color */
+  color: #1a1a1a;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+
+.connect-thrive-upcoming-course-card-button a:hover {
+  background-color: #dfd563; /* Darker shade on hover */
+}
+
+.connect-thrive-upcoming-course-icon {
+  position: absolute;
+  bottom: -0.375rem;
+  right: -0.375rem;
+  width: 6rem;
+  height: 6rem;
+  background: #1a1a1a; /* Use the card color */
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 1.25rem; /* Ensure rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem #1a1a1a;
+}
+
+.connect-thrive-upcoming-course-icon::before {
+  content: "";
+  position: absolute;
+  bottom: 0.375rem;
+  left: -1.25rem;
+  background: transparent;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem #1a1a1a;
+}
+
+.connect-thrive-upcoming-course-icon::after {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  right: 0.375rem;
+  background: transparent;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem #1a1a1a;
+}
+
+.connect-thrive-upcoming-course-iconBox {
+  position: absolute;
+  inset: 0.625rem;
+  background-color: #0cb6b5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  text-decoration: none !important;
+}
+
+.connect-thrive-upcoming-course-iconBox span {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.connect-thrive-upcoming-course-icon:hover .connect-thrive-upcoming-course-iconBox {
+  transform: scale(1.1);
+}
+
+.connect-thrive-upcoming-course-content {
+  padding: 0.938rem 0.625rem;
+  color: white; /* Set text color to white */
+}
+
+.connect-thrive-upcoming-course-content p {
+  margin: 0.625rem 0 1.25rem;
+  color: #ccc; /* Set description color to a lighter shade for contrast */
+}
+
+.connect-thrive-upcoming-course-card-heading {
+  text-align: center; /* Center-align the heading text */
+  color: white; /* Set text color */
+  font-size: 32px; /* Responsive font size */
+  font-weight: 700; /* Make the font bold */
+  margin-bottom: 1rem; /* Space below the heading */
+}
+
+@media (max-width:1300px){
+  .connect-thrive-upcoming-course-container {
+  /* margin-top: 5em; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+}
+
+@media (max-width: 1000px) {
+  .connect-thrive-upcoming-course-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+    width: 90%; /* Adjust the width to fit the screen */
+  }
+
+  .connect-thrive-upcoming-course-card {
+    width: 100%; /* Ensure each card takes the full width */
+    margin: 0 auto; /* Center the card */
+  }
+
+  .connect-thrive-upcoming-course-card-button {
+    width: 70%; /* Make the button full width */
+    left: 40%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust centering */
+  }
+}
+
+@media (max-width: 500px) {
+  .connect-thrive-upcoming-course-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+    width: 90%; /* Adjust the width to fit the screen */
+  }
+
+  .connect-thrive-upcoming-course-card {
+    width: 100%; /* Ensure each card takes the full width */
+    margin: 0 auto; /* Center the card */
+  }
+
+  .connect-thrive-upcoming-course-card-button {
+    width: 70%; /* Make the button full width */
+    left: 40%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust centering */
+  }
+}
+
+.connect-thrive-upcoming-course-icon2 {
+  position: absolute;
+  bottom: -0.375rem;
+  right: -0.375rem;
+  width: 6rem;
+  height: 6rem;
+  background: #1e1e1e; /* Use the card color */
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 1.25rem; /* Ensure rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem #1e1e1e;
+}
+
+.connect-thrive-upcoming-course-icon2::before {
+  content: "";
+  position: absolute;
+  bottom: 0.375rem;
+  left: -1.25rem;
+  background: transparent;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem #1e1e1e;
+}
+
+.connect-thrive-upcoming-course-icon2::after {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  right: 0.375rem;
+  background: transparent;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-bottom-right-radius: 1.25rem;
+  box-shadow: 0.313rem 0.313rem 0 0.313rem #1e1e1e;
+}
+
+.connect-thrive-upcoming-course-icon2Box {
+  position: absolute;
+  inset: 0.625rem;
+  background-color: #0cb6b5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  text-decoration: none !important;
+}
+
+.connect-thrive-upcoming-course-icon2Box span {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.connect-thrive-upcoming-course-icon2:hover .connect-thrive-upcoming-course-icon2Box {
+  transform: scale(1.1);
+}
+
+/*Why Connect Thrive*/
+/* Why Connect Thrive */
+      .connect-thrive-why-section {
+        padding: 5rem;
+        color: #111;
+        background-color: #f5f5f5; /* Fallback color */
+        background-image: url("../images/other-images/why-connectthrive-bg.webp"); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   
+        position: relative; /* Required for positioning the image */
+        height: 100vh;
+  
+      }
+
+      .connect-thrive-why-heading {
+        text-align: center;
+        color: white; /* Text color */
+        font-size: 36px;
+        margin-bottom: 1rem; /* Adjust spacing as needed */
+        font-weight: 800;
+      }
+
+      .connect-thrive-why-paragraph {
+        text-align: center;
+        color: white; /* Paragraph text color */
+        font-size: 20px; /* Responsive font size */
+        line-height: 1.6; /* Line height for better readability */
+        max-width: 1000px; /* Maximum width for the paragraph */
+        margin: 0 auto; /* Center the paragraph */
+        padding: 0 1rem; /* Padding on the sides */
+        font-weight: 500;
+        padding-bottom: 30px;
+      }
+
+      .connect-thrive-why-content {
+        width: 75%; /* Set width of the content area */
+        overflow: hidden; /* Hide overflow for smooth scrolling */
+        position: relative; /* Required for positioning child elements */
+      }
+
+      .connect-thrive-why-text-boxes {
+        display: flex;
+        animation: smoothscroll 10s linear infinite; /* Changed to 10s for faster scrolling */
+        width: calc(250px * 4); /* Adjusted width to accommodate 4 boxes */
+      }
+
+      .connect-thrive-why-text-box {
+        flex: 0 0 25%; /* Make each box 25% of the container width */
+        background-color: #0cb6b5; /* Background color */
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the text boxes */
+        padding: 1rem;
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; /* Align items in a column */
+        align-items: center; /* Center-align items */
+        justify-content: center; /* Center-align items */
+        height: auto; /* Fixed height to maintain square shape */
+        margin-right: 1rem; /* Add spacing between boxes */
+        width: 250px; /* Set fixed width to make the box square */
+      }
+
+      /* Remove margin from the last box to avoid extra spacing */
+      .connect-thrive-why-text-box:last-child {
+        margin-right: 0;
+      }
+
+      .connect-thrive-why-text-box .icon {
+        font-size: 2rem; /* Size of the Font Awesome icon */
+        margin-bottom: 0.5rem; /* Space between icon and heading */
+        text-align: center; /* Center-align icon */
+      }
+
+      .connect-thrive-why-text-box h3 {
+        font-size: 1.25rem; /* Font size for the heading */
+        margin-bottom: 0.5rem; /* Space between heading and paragraph */
+        color: #fbe80f;
+        text-align: center; /* Center-align heading */
+      }
+
+      .connect-thrive-why-text-box p {
+        font-size: 16px; /* Font size for the paragraph */
+        color: #dcdcdc;
+        text-align: center; /* Center-align paragraph */
+      }
+
+      @keyframes smoothscroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-25%);
+        } /* Move left by 25% to show 4 boxes */
+      }
+
+
+    @media (max-width: 500px) {
+  .spiral-dotted.visible {
+    transform: scale(1) rotate(30deg); /* Keep zoomed in and rotated to 30 degrees */
+    opacity: 1; /* Fully visible */
+    animation: none; /* Disable the continuous rotation */
+  }
+}
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 1000px) {
+        h2{
+          font-size: 24px !important;
+        }
+        .connect-thrive-why-content {
+          width: 100%; /* Full width for mobile */
+        }
+
+        .connect-thrive-why-text-boxes {
+          width: calc(250px * 8); /* Adjust width to accommodate 8 boxes for scrolling effect */
+        }
+
+        .connect-thrive-why-text-box {
+          flex: 0 0 25%; /* Keep the box size the same */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .connect-thrive-why-paragraph {
+          font-size: 18px; /* Adjust paragraph font size for smaller screens */
+        }
+
+        .connect-thrive-why-text-box {
+          flex: 0 0 10%; /* Keep the box size the same */
+        }
+
+        .connect-thrive-why-section {
+          padding: 20px;
+          height: 100vh;
+        }
+           /* Spiral Dotted Shape with Fade-In, Zoom-In, and Continuous Rotation */
+      .spiral-dotted {
+        position: absolute;
+        top: 0%;
+        left: -55%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 1;
+        transform: scale(0) rotate(30deg); /* Start zoomed out and rotated */
+        transform-origin: center; /* Set the pivot point to the center of the image */
+        opacity: 0; /* Start with the image being invisible */
+        transition: transform 2s ease-in, opacity 2s ease-in; /* Smooth transition for zoom and fade */
+      }
+
+      }
+
+      /* Spiral Dotted Shape with Fade-In, Zoom-In, and Continuous Rotation */
+      .spiral-dotted {
+        position: absolute;
+        top: 0%;
+        left: -45%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        z-index: 1;
+        transform: scale(0) rotate(30deg); /* Start zoomed out and rotated */
+        transform-origin: center; /* Set the pivot point to the center of the image */
+        opacity: 0; /* Start with the image being invisible */
+        transition: transform 2s ease-in, opacity 2s ease-in; /* Smooth transition for zoom and fade */
+      }
+
+      /* When the image is in view, apply fade-in and zoom-in effect */
+      .spiral-dotted.visible {
+        transform: scale(1) rotate(30deg); /* Zoom in to 100%, no extra rotation at start */
+        opacity: 1; /* Fully visible */
+        animation: self-rotate 380s linear infinite; /* Start continuous rotation after zoom-in */
+      }
+
+      /* Continuous rotation */
+      @keyframes self-rotate {
+        0% {
+          transform: rotate(30deg);
+        }
+        100% {
+          transform: rotate(390deg); /* 360 degrees + initial 30 degrees */
+        }
+      }
+
+/* FAQ Section Styles */
+.connect-thrive-faq-section-container {
+  background-color: #1a1a1a; /* Background color */
+  width: 100%; /* Full width */
+  padding: 40px 20px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Ensure padding and borders are included in the width and height */
+  color: #fff; /* Text color */
+}
+
+.connect-thrive-faq-section-content {
+  width: 90%; /* Adjust width for responsiveness */
+  max-width: 1200px; /* Maximum width for larger screens */
+  margin: 0 auto; /* Center the container */
+}
+
+.connect-thrive-faq-section-item {
+  padding: 15px; /* Padding inside FAQ items */
+  border-bottom: 2px solid #fff; /* White bottom border */
+  position: relative; /* For positioning toggle signs */
+  margin-bottom: 20px; /* Space between FAQ items */
+  background-color: transparent; /* Transparent background */
+}
+
+.connect-thrive-faq-section-question {
+  font-size: 24px; /* Font size for questions */
+  font-weight: bold;
+  cursor: pointer; /* Pointer cursor to indicate clickable */
+  background-color: transparent; /* Transparent background */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  position: relative; /* Position for toggle signs */
+}
+
+.connect-thrive-faq-section-answer {
+  display: none; /* Hide answers by default */
+  margin-top: 10px; /* Space between question and answer */
+  background-color: transparent; /* Transparent background */
+  padding: 0; /* Remove padding */
+  font-size: 18px;
+}
+
+.connect-thrive-faq-section-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; /* Pointer cursor for toggle */
+  font-size: 28px;
+  color: #fff; /* Color of toggle signs */
+}
+
+.faq-symbol {
+  width: 20px;
+  font-weight: 900;
+}
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .connect-thrive-faq-section-content {
+    width: 95%; /* Full width with small margin */
+  }
+
+  .connect-thrive-faq-section-question {
+    font-size: 16px; /* Smaller font size on mobile */
+  }
+
+  .connect-thrive-faq-section-answer {
+    font-size: 14px; /* Smaller font size on mobile */
+  }
+
+  .connect-thrive-faq-section-toggle {
+    font-size: 18px; /* Smaller toggle font size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .connect-thrive-faq-section-content {
+    width: 100%; /* Full width on very small screens */
+  }
+}
+
+.connect-thrive-contact-form-section {
+  background-color: #1a1a1a; /* Background color */
+  width: 100%; /* Full width */
+  padding: 40px 20px; /* Adjust padding as needed */
+  color: #fff; /* Text color */
+  box-sizing: border-box; /* Ensure padding and borders are included in the width and height */
+  display: flex;
+  justify-content: center; /* Center the inner container horizontally */
+  align-items: center; /* Center the inner container vertically */
+  flex-direction: column; /* Align children in a column */
+  text-align: center; /* Center the text */
+  gap: 1rem;
+}
+
+.connect-thrive-contact-form-inner-container {
+  width: 70%; /* Width of the inner container */
+  display: flex;
+  border-radius: 20px; /* Optional: for rounded corners */
+  overflow: hidden; /* To ensure content stays within the container */
+  height: 100%; /* Ensure it takes full height of the parent */
+  position: relative; /* To position child elements absolutely within */
+  border: 4px solid #f1c644; /* Inner border */
+}
+
+.connect-thrive-contact-form-inner-container::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute;
+  top: -6px; /* Offset to create spacing for the outer border */
+  left: -6px; /* Offset to create spacing for the outer border */
+  right: -6px; /* Offset to create spacing for the outer border */
+  bottom: -6px; /* Offset to create spacing for the outer border */
+  border-radius: 22px; /* Slightly larger radius to match container's rounded corners */
+  border: 2px solid #000; /* Outer border color */
+  z-index: -1; /* Place the pseudo-element behind the main container */
+}
+
+.connect-thrive-contact-form-bg {
+  flex: 1;
+  background-image: url("../images/other-images/contcat-bg.webp"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+  position: relative; /* For positioning the logo and text */
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  color: #1a1a1a; /* Text color */
+}
+
+.connect-thrive-contact-form-logo {
+  position: absolute; /* Position absolutely within the .connect-thrive-contact-form-bg */
+  top: 20%; /* Adjust top position as needed */
+
+  max-width: 550px; /* Adjust logo size */
+}
+
+.connect-thrive-contact-form-text {
+  position: absolute; /* Position absolutely within the .connect-thrive-contact-form-bg */
+  bottom: 20px; /* Adjust bottom position as needed */
+  left: 20px; /* Adjust left position as needed */
+  font-size: 18px; /* Adjust text size */
+  max-width: 100%; /* Adjust text width */
+  text-align: left; /* Center the text */
+}
+
+.connect-thrive-contact-form-content {
+  flex: 1;
+  background-color: #ffffff; /* White background for the form content */
+  padding: 20px; /* Padding for content */
+  color: #000; /* #1a1a1a text color for form labels and inputs */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.connect-thrive-contact-form-content h2 {
+  font-size: 28px; /* Form title font size */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  font-size: 16px; /* Label font size */
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-field textarea {
+  height: 100px; /* Height for the textarea (Your Message) */
+  resize: none; /* Prevent resizing */
+}
+
+.form-submit {
+  background-color: #f1c644; /* Button background */
+  color: #000; /* Button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #e6b537; /* Slightly darker on hover */
+}
+
+/* New Heading Styles */
+.connect-thrive-contact-form-section h2 {
+  font-size: 36px; /* Main section heading font size */
+  margin: 0px;
+}
+
+.connect-thrive-contact-form-section h4 {
+  font-size: 24px; /* Main section heading font size */
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1024px) {
+  /* Tablet: Adjust width and layout */
+  .connect-thrive-contact-form-inner-container {
+    width: 90%;
+    flex-direction: column; /* Stack the form and image sections vertically */
+    height: auto; /* Allow container to adapt to content height */
+  }
+
+  .connect-thrive-contact-form-inner-wrapper {
+    background-color: transparent; /* Remove the background color on smaller screens */
+  }
+
+  .connect-thrive-contact-form-bg,
+  .connect-thrive-contact-form-content {
+    width: 100%; /* Full width for both sections */
+    flex: none; /* Remove flex sizing */
+  }
+
+  .connect-thrive-contact-form-content {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .connect-thrive-contact-form-logo {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  /* Mobile: Optimize for small screens */
+  .connect-thrive-contact-form-inner-container {
+    width: 100%; /* Full width for mobile */
+    padding: 0;
+  }
+
+  .connect-thrive-contact-form-section {
+    padding: 20px 10px; /* Reduce padding for mobile */
+  }
+
+  .connect-thrive-contact-form-logo {
+    max-width: 200px; /* Smaller logo */
+    display: none;
+  }
+
+  .connect-thrive-contact-form-text {
+    font-size: 18px; /* Smaller text */
+  }
+
+  .connect-thrive-contact-form-content h2 {
+    font-size: 24px; /* Adjust heading size */
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 14px; /* Slightly smaller inputs */
+  }
+
+  .form-submit {
+    font-size: 16px; /* Smaller button text */
+  }
+}
+/* Footer */
+footer {
+  color: white;
+}
+
+.connect-thrive-footer-top {
+  display: flex;
+  justify-content: center;
+  padding: 40px 50px;
+  flex-wrap: wrap;
+  background-color: #022d31;
+  align-items: flex-start;
+}
+
+.connect-thrive-footer-bottom {
+  background-color: #fbe80f;
+  color: #1a1a1a;
+  text-align: center;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connect-thrive-footer-top div {
+  flex: 1 1 200px;
+  margin: 10px;
+  min-width: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.connect-thrive-footer-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.connect-thrive-footer-logo-section img {
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.connect-thrive-footer-h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: white;
+}
+
+.connect-thrive-footer-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.connect-thrive-footer-li {
+  margin: 4px 0;
+  color: white;
+}
+
+.connect-thrive-footer-a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.connect-thrive-footer-social-media-section a {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.connect-thrive-footer-designed-by {
+  color: #1a1a1a;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+/* Mobile-friendly styles */
+@media (max-width: 768px) {
+  .connect-thrive-footer-top {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .connect-thrive-footer-top div {
+    text-align: center;
+    padding: 10px 0;
+    flex: 1 1 100%;
+  }
+
+  .connect-thrive-footer-logo-section img {
+    max-width: 80%; /* Make the logo a bit larger for smaller devices */
+  }
+
+  .connect-thrive-footer-h3 {
+    font-size: 1.1em; /* Adjust heading size for small devices */
+  }
+
+  .connect-thrive-footer-li {
+    font-size: 0.9em; /* Adjust list items for readability */
+  }
+
+  .connect-thrive-footer-social-media-section a {
+    font-size: 1.2em; /* Adjust icon size for smaller devices */
+  }
+
+  .connect-thrive-footer-top div {
+    margin: 10px 0; /* Increase vertical spacing for each section */
+  }
+}
+
+/* Extra small devices (max-width: 576px) */
+@media (max-width: 576px) {
+  .connect-thrive-footer-top {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .connect-thrive-footer-top div {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .connect-thrive-footer-h3 {
+    font-size: 1em; /* Further reduce heading size */
+  }
+
+  .connect-thrive-footer-li {
+    font-size: 0.8em; /* Further reduce list item size */
+  }
+
+  .connect-thrive-footer-logo-section img {
+    max-width: 90%; /* Allow logo to take more space */
+  }
+
+  .connect-thrive-footer-social-media-section a {
+    font-size: 1em; /* Adjust icon size */
+  }
+}
+
+/*Pop-up form*/
+
+/* General Button Styles */
+.popup-button {
+  padding: 10px 20px;
+  background-color: #fbe80f;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Popup Background Overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+/* Popup Form Styles */
+.popup-form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px; /* Reduced padding for smaller screens */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  width: 90%; /* Default width for small screens */
+  max-width: 500px; /* Max width for larger screens */
+}
+
+.popup-form h2 {
+  margin-top: 0;
+  color: #333;
+  display: inline-block; /* Align with the button */
+}
+
+.popup-form .close-btn {
+  background-color: #f44336;
+  float: right; /* Position the close button to the right */
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.popup-form button {
+  padding: 10px 20px;
+  background-color: #fbe80f;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Space between buttons */
+  display: inline-block;
+}
+
+.popup-form input[type="text"],
+.popup-form input[type="email"],
+.popup-form input[type="tel"],
+.popup-form select,
+.popup-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup-form textarea {
+  resize: vertical;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  .popup-form {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .popup-form h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+  }
+
+  .popup-form .close-btn {
+    font-size: 12px; /* Adjust close button size */
+  }
+
+  .popup-form button {
+    padding: 8px 16px; /* Adjust button padding */
+  }
+}
+
+.connect-thrive-course-enrollment-section-container {
+  width: 100%; /* Ensure full width */
+  height: 100vh; /* Full viewport height */
+  background-image: url("../images/other-images/course-enrollment-bg.webp");
+  background-size: cover; /* Cover the entire container */
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.connect-thrive-course-enrollment-section-container h2 {
+  font-size: 38px;
+}
+.connect-thrive-course-enrollment-section-dotted-box {
+  width: 600px;
+  height: auto; /* Set to auto to adjust based on content */
+  min-height: 600px; /* Ensure it has a minimum height */
+  background-image: url("../images/other-images/course-enrollment-dotted.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.connect-thrive-course-enrollment-section-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0a787b;
+}
+
+.connect-thrive-course-enrollment-section-course-parts {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.connect-thrive-course-enrollment-section-course-part {
+  text-align: center;
+  position: relative; /* For the vertical line */
+  padding: 0 15px; /* Add padding for the line */
+}
+
+.connect-thrive-course-enrollment-section-course-part h4 {
+  font-size: 20px;
+  margin-bottom: 10px; /* Space between heading and paragraph */
+}
+
+.connect-thrive-course-enrollment-section-course-part p {
+  font-size: 18px;
+}
+
+.connect-thrive-course-enrollment-section-course-part:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -10px; /* Space from the text */
+  top: 0;
+  height: 100%;
+  border-right: 1px solid #ccc; /* Line style */
+}
+
+.connect-thrive-course-enrollment-section-course-icon {
+  margin-right: 5px;
+  vertical-align: middle; /* Align with text */
+}
+
+.connect-thrive-course-enrollment-section-additional-parts {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.connect-thrive-course-enrollment-section-additional-parts-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.connect-thrive-course-enrollment-section-additional-part {
+  margin: 10px 0;
+  font-size: 1.2rem; /* Adjust font size if needed */
+  padding: 0 15px; /* Add padding for the line */
+  color: #0a787b;
+}
+
+.connect-thrive-course-enrollment-section-enroll-button {
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px; /* Padding for the button */
+  background-color: #fbe80f; /* Green background color */
+  color: #1a1a1a; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 1.2rem; /* Font size */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for padding */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.connect-thrive-course-enrollment-section-enroll-button:hover {
+  background-color: #bbab00; /* Darker green on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .connect-thrive-course-enrollment-section-dotted-box {
+    width: 90%; /* Adjust width for mobile */
+  }
+
+  .connect-thrive-course-enrollment-section-container h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .connect-thrive-course-enrollment-section-heading {
+    font-size: 1.5rem; /* Decrease heading font size for mobile */
+  }
+
+  .connect-thrive-course-enrollment-section-course-part h4,
+  .connect-thrive-course-enrollment-section-additional-part {
+    font-size: 1rem; /* Decrease font size for course parts */
+  }
+
+  .connect-thrive-course-enrollment-section-course-parts,
+  .connect-thrive-course-enrollment-section-additional-parts-row {
+    flex-direction: row; /* Keep the parts in a row */
+    justify-content: space-between; /* Adjust spacing for mobile */
+  }
+
+  .connect-thrive-course-enrollment-section-course-part,
+  .connect-thrive-course-enrollment-section-additional-part {
+    flex: 1; /* Allow parts to take equal space */
+    text-align: center; /* Center text */
+  }
+
+  .connect-thrive-course-enrollment-section-additional-parts-row {
+    margin-top: 10px; /* Adjust margin */
+  }
+}
+
+/* Responsive adjustments for screens below 400px */
+@media (max-width: 400px) {
+  .connect-thrive-course-enrollment-section-additional-parts {
+    margin-top: 0px !important;
+    text-align: center;
+  }
+  .connect-thrive-course-enrollment-section-dotted-box {
+    width: 95%; /* Adjust width for mobile */
+  }
+
+  .connect-thrive-course-enrollment-section-additional-part {
+    margin: 1px 0;
+    font-size: 1rem; /* Adjust font size if needed */
+    padding: 0 5px; /* Add padding for the line */
+    color: #0a787b;
+  }
+
+
+  
+  .connect-thrive-course-enrollment-section-enroll-button {
+  margin-top: 5px; /* Space above the button */
+  padding: 5px 10px; /* Padding for the button */
+  background-color: #fbe80f; /* Green background color */
+  color: #1a1a1a; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 1.2rem; /* Font size */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block for padding */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+  .connect-thrive-course-enrollment-section-container h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .connect-thrive-course-enrollment-section-heading {
+    font-size: 1.2rem; /* Decrease heading font size for mobile */
+  }
+
+  .connect-thrive-course-enrollment-section-course-part,
+  .connect-thrive-course-enrollment-section-additional-part {
+    flex: 1; /* Allow parts to take equal space */
+    text-align: center; /* Center text */
+  }
+
+  .connect-thrive-course-enrollment-section-course-icon {
+    font-size: 0.8rem; /* Decrease icon size for mobile */
+  }
+
+  .connect-thrive-course-enrollment-section-additional-parts-row {
+    margin-top: 10px; /* Adjust margin */
+  }
+}
+
+/*Our-Service Section*/
+
+.connect-thrive-our-service-section {
+  background-color: white; /* Light background for the section */
+  padding: 50px 20px; /* Top-bottom padding for the section */
+  text-align: center; /* Center align the title */
+
+  border-radius: 15px; /* Rounded corners for the section */
+  margin: 20px; /* Margin around the section */
+  position: relative; /* For the gradient effect */
+  overflow: hidden; /* To keep inner shadows contained */
+}
+
+/* Spiral Dots Background */
+.spiral-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent overflow of dots */
+  z-index: 0; /* Behind content */
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(12, 182, 181, 0.5); /* Dot color */
+  animation: move 15s linear infinite; /* Animation for movement */
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(600px, 600px); /* Move diagonally */
+  }
+}
+
+/* Additional Styles */
+.connect-thrive-our-service-section-title {
+  font-size: 36px; /* Title size */
+  margin-bottom: 30px; /* Space between title and boxes */
+  color: #2c3e50; /* Darker color for the title for better contrast */
+  font-weight: bold; /* Bold for emphasis */
+  z-index: 1; /* Above background */
+  position: relative; /* For layering */
+}
+
+.connect-thrive-our-service-boxes {
+  display: flex; /* Use flexbox to align items in a row */
+  justify-content: center; /* Center boxes horizontally */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  position: relative; /* To keep boxes above the background */
+  z-index: 1; /* Above background */
+}
+
+.connect-thrive-our-service-box {
+  flex: 1; /* Each box will take equal space */
+  min-width: 350px; /* Minimum width for each box */
+  max-width: 400px; /* Maximum width for each box */
+  height: auto; /* Allow height to adjust based on content */
+  margin: 20px; /* Space between boxes */
+  border: 1px solid #0cb6b5; /* Light grey border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  display: flex; /* Use flexbox for box content */
+  flex-direction: column; /* Column layout for icon, heading, content */
+  align-items: flex-start; /* Align content to the start (left) */
+  justify-content: flex-start; /* Align content to the start (top) */
+  opacity: 0; /* Start fully transparent */
+  transform: scale(0); /* Start at scale 0 */
+  transition: transform 0.8s ease, opacity 0.8s ease; /* Transition for scale and opacity */
+  background-color: #ffffff; /* White background for service boxes */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow for the boxes */
+  position: relative; /* For layering */
+}
+
+.connect-thrive-our-service-box.show {
+  opacity: 1; /* Fully visible */
+  transform: scale(1); /* Full size */
+}
+
+.connect-thrive-our-service-icon {
+  background-color: #cafdf7; /* Circle background color */
+  border-radius: 50%; /* Make it circular */
+  padding: 20px; /* Padding to create the circle effect */
+  display: flex; /* Use flex to align icon */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  margin-bottom: 15px; /* Space between icon and heading */
+}
+
+.connect-thrive-our-service-icon img {
+  width: 48px; /* Size for the icon */
+  height: 48px; /* Maintain aspect ratio */
+}
+
+.connect-thrive-our-service-heading {
+  font-size: 22px; /* Slightly smaller than the title */
+  margin-bottom: 10px; /* Space between heading and content */
+  color: #333; /* Dark color for headings */
+  font-weight: 600; /* Semi-bold for emphasis */
+  text-align: left; /* Align heading text to the left */
+  width: 100%; /* Ensure the heading takes the full width */
+}
+
+.connect-thrive-our-service-content {
+  font-size: 16px; /* Content size */
+  color: #666; /* Grey color for content */
+  text-align: left; /* Align content text to the left */
+  padding: 0 10px; /* Add horizontal padding */
+  width: 100%; /* Ensure the content takes the full width */
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .connect-thrive-our-service-box {
+    max-width: 90%; /* Full width on smaller screens */
+    margin-bottom: 20px; /* Space between boxes vertically */
+  }
+
+  .connect-thrive-our-service-box {
+    min-width: 97%; /* Minimum width for each box */
+    max-width: 400px; /* Maximum width for each box */
+    height: auto; /* Allow height to adjust based on content */
+  }
+}
+
+/*Testimonials*/
+
+/* Centering the image in the middle of the screen */
+.connect-thrive-testimonial-section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #1a1a1a;
+}
+
+/* Original shaped box for desktop */
+.connect-thrive-testimonial-section-box {
+  position: relative;
+  width: 60%;
+  height: auto;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.connect-thrive-testimonial-section-box img {
+  width: 95%;
+  height: 250px;
+  display: block;
+}
+
+.connect-thrive-testimonial-section-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.connect-thrive-testimonial-section-top {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.connect-thrive-testimonial-section-image-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.connect-thrive-testimonial-section-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.connect-thrive-testimonial-section-text-container {
+  flex-grow: 1;
+  padding-left: 20px;
+  color: white;
+}
+
+.connect-thrive-testimonial-section-name {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+}
+
+.connect-thrive-testimonial-section-stars {
+  font-size: 1.5rem;
+  color: gold;
+  margin: 5px 0;
+}
+
+.connect-thrive-testimonial-section-bottom {
+  text-align: center;
+  overflow: hidden;
+}
+
+.connect-thrive-testimonial-section-text {
+  font-size: 1.2rem;
+  color: white;
+  text-align: left;
+}
+
+/* Shaking animation */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-25px);
+  }
+  40% {
+    transform: translateY(25px);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+  80% {
+    transform: translateY(20px);
+  }
+}
+
+.connect-thrive-testimonial-section-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.connect-thrive-testimonial-section-heading {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.connect-thrive-testimonial-section-bottom-paragraph {
+  color: white;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Mobile-specific rectangular box */
+.connect-thrive-testimonial-section-mobile-box {
+  display: none;
+  width: 80%;
+  height: auto;
+  background-color: #0cb6b5;
+  padding: 20px;
+  color: white;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.connect-thrive-testimonial-section-mobile-box .connect-thrive-testimonial-section-top {
+  display: flex;
+  align-items: center;
+}
+
+.connect-thrive-testimonial-section-mobile-box .connect-thrive-testimonial-section-image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.connect-thrive-testimonial-section-mobile-box
+  .connect-thrive-testimonial-section-image-container
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.connect-thrive-testimonial-section-mobile-box .connect-thrive-testimonial-section-text-container {
+  flex-grow: 1;
+  padding-left: 20px;
+  color: white;
+}
+
+.connect-thrive-testimonial-section-mobile-box .connect-thrive-testimonial-section-name {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.connect-thrive-testimonial-section-mobile-box .connect-thrive-testimonial-section-stars {
+  font-size: 1.2rem;
+  color: gold;
+}
+
+.connect-thrive-testimonial-section-mobile-box .connect-thrive-testimonial-section-text {
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+}
+
+/* Hide the shaped box and show the rectangular box below 1000px */
+@media (max-width: 1000px) {
+  .connect-thrive-testimonial-section-box {
+    display: none !important;
+  }
+  .connect-thrive-testimonial-section-mobile-box {
+    display: block;
+  }
+
+
+  .connect-thrive-testimonial-section-container {
+
+  height: auto;
+
+}
+}
+
+/* Hide the shaped box and show the rectangular box below 1000px */
+@media (min-width: 1000px) {
+  .connect-thrive-testimonial-section-mobile-box {
+    display: none !important;
+  }
+}
+.connect-thrive-fixed-buttons {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Changed from left to right */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between buttons */
+  z-index: 1000; /* Ensures buttons are above other content */
+}
+
+.connect-thrive-fixed-button {
+  background-color: transparent; /* Change as needed */
+  border-radius: 50%; /* Round buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+}
+
+.connect-thrive-fixed-button img {
+  width: 90%; /* Adjust image size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.connect-thrive-fixed-button img {
+  width: 90%; /* Adjust image size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 1000px) {
+  .connect-thrive-footer-logo-section-p {
+    text-align: center; /* Center the text on smaller screens */
+  }
+}
+
+@media (min-width: 1000px) {
+  .connect-thrive-footer-logo-section-p {
+    text-align: left; /* Align text to the left on larger screens */
+    width: 50%;
+  }
+}
+
+
+
+
+@media (min-width:500px){
+  
+.connect-thrive-testimonial-section-heading {
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+}

@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Desktop Styles */
+.connect-thrive-desktop-module-background {
+  background-image: url("../images/other-images/upcoming-courses-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fix the background */
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align items at the start */
+  color: white;
+  padding: 20px;
+  margin: auto;
+  height: auto; /* Adjust height */
+  overflow: hidden; /* Prevent background movement */
+  position: relative; /* Required for centering */
+}
+
+.connect-thrive-desktop-module-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  gap: 30px; /* Add gap between the two parts */
+}
+
+/* Add gap between modules */
+.connect-thrive-desktop-module-part {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50%; /* Set width to 50% */
+  padding: 20px;
+
+}
+
+.connect-thrive-desktop-module-label {
+  background: #fbe80f;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0; /* No gap between labels and subparts */
+  width: 40%;
+  border-radius: 24px 0 0 0; /* Rounded top corners */
+}
+
+.connect-thrive-desktop-module-faq-column {
+  flex: 1;
+}
+
+.connect-thrive-desktop-module-faq-title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: white;
+  color: black;
+  border-radius: 0 24px 0 0; /* Only top corners rounded */
+  margin-bottom: 0; /* Remove gap between title and content */
+  transition: background 0.3s; /* Smooth background transition */
+  width: 100%; /* Changed to 100% for centering */
+}
+
+.connect-thrive-desktop-module-faq-content {
+  padding: 10px;
+  background: white;
+  color: black;
+  border-top: none; /* Remove top border */
+  border-radius: 0 0 4px 4px; /* Only bottom corners rounded */
+  margin-bottom: 20px; /* Space between FAQ items */
+  line-height: 1.6; /* Increased line height for readability */
+  max-height: 0; /* Initially hidden */
+  opacity: 0; /* Initially hidden */
+  overflow: hidden; /* Prevent overflow */
+  width: 100%; /* Full width */
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.connect-thrive-desktop-module-faq-content.open {
+  max-height: 200px; /* Set a specific max-height for opened state */
+  opacity: 1; /* Show content */
+}
+
+/* Mobile Styles */
+.connect-thrive-mobile-module-background {
+  background-image: url("../images/other-images/upcoming-courses-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fix the background */
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align items at the start */
+  color: white;
+  padding: 20px;
+  margin: auto;
+  overflow: hidden; /* Prevent background movement */
+  position: relative; /* Required for centering */
+}
+
+.connect-thrive-mobile-module-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.connect-thrive-mobile-module-part {
+  padding: 20px;
+  margin-bottom: 500px; /* Space between modules */
+}
+
+.connect-thrive-mobile-module-label {
+  background: #fbe80f;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0; /* No gap between labels and subparts */
+  width: 50%; /* Full width for mobile */
+  border-radius: 24px 0 0 0; /* Rounded top corners */
+}
+
+.connect-thrive-mobile-module-faq-column {
+  flex: 1;
+}
+
+.connect-thrive-mobile-module-faq-title {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: white;
+  color: black;
+  border-radius: 0 24px 0 0; /* Only top corners rounded */
+  margin-bottom: 0; /* Remove gap between title and content */
+  transition: background 0.3s; /* Smooth background transition */
+  width: 100%; /* Changed to 100% for centering */
+}
+
+.connect-thrive-mobile-module-faq-content {
+  padding: 10px;
+  background: white;
+  color: black;
+  border-top: none; /* Remove the top border for content */
+  border-radius: 0 0 4px 4px; /* Only bottom corners rounded */
+  margin-bottom: 20px; /* Space between FAQ items */
+  line-height: 1.6; /* Increased line height for readability */
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+  max-height: 0; /* Initially hidden */
+  opacity: 0; /* Initially hidden */
+  overflow: hidden; /* Prevent overflow */
+  width: 100%; /* Changed to 100% for centering */
+}
+
+.connect-thrive-mobile-module-faq-content.open {
+  max-height: 300px; /* Set a specific max-height for opened state */
+  opacity: 1; /* Show content */
+  display: block; /* Show the content */
+}
+
+/* Media Queries */
+@media (max-width: 769px) {
+  .connect-thrive-desktop-module-background {
+    display: none; /* Hide on smaller devices */
+  }
+}
+
+@media (min-width: 769px) {
+  .connect-thrive-mobile-module-background {
+    display: none !important; /* Hide the section above 769px */
+  }
+}
